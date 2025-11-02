@@ -236,7 +236,13 @@
 </head>
 <body>
   <div id="root"></div>
-  <script type="text/babel">
+  <!--
+    Use Babel-standalone to transpile JSX at runtime. The data-presets attribute ensures
+    the React preset (and basic ES2015/ESNext syntax) is applied. Without this,
+    Babel will not know how to transform JSX and the script will fail to execute,
+    leaving a blank page when hosted on GitHub Pages.
+  -->
+  <script type="text/babel" data-presets="env,react">
     const { useState, useEffect } = React;
 
     function App() {
